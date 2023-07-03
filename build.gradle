@@ -1,0 +1,40 @@
+apply plugin: 'java-library'
+apply plugin: 'maven-publish'
+
+group 'burp'
+version ''
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+dependencies {
+    implementation "net.portswigger.burp.extensions:montoya-api:2023.2"
+    implementation "com.github.CoreyD97:Burp-Montoya-Utilities:86c912a" //https://jitpack.io/com/github/CoreyD97/Burp-Montoya-Utilities/86c912a/
+    implementation "com.google.code.gson:gson:2.10.1"
+    implementation "org.springframework:spring-core:6.0.8"
+    implementation "org.apache.commons:commons-lang3:3.12.0"
+    //implementation "com.formdev:flatlaf:3.1.1"
+    //implementation "com.google.guava:guava:31.1-jre"
+}
+
+jar{
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    archivesBaseName = project.name
+    from {
+        (configurations.runtimeClasspath).collect { it.isDirectory() ? it : zipTree(it) }
+    }{
+        exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+        exclude "META-INF/*.txt"
+    }
+}
+
+tasks.withType(Jar) {
+    destinationDirectory = file("$rootDir/releases/")
+}
+

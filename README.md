@@ -1,0 +1,1 @@
+# Burp Suite Java Template
