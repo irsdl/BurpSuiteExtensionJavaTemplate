@@ -12,11 +12,11 @@ repositories {
 }
 
 dependencies {
-    implementation "net.portswigger.burp.extensions:montoya-api:2023.2"
+    implementation "net.portswigger.burp.extensions:montoya-api:2023.6" //https://central.sonatype.com/artifact/net.portswigger.burp.extensions/montoya-api/2023.6
     implementation "com.github.CoreyD97:Burp-Montoya-Utilities:86c912a" //https://jitpack.io/com/github/CoreyD97/Burp-Montoya-Utilities/86c912a/
-    implementation "com.google.code.gson:gson:2.10.1"
-    implementation "org.springframework:spring-core:6.0.8"
-    implementation "org.apache.commons:commons-lang3:3.12.0"
+    implementation "com.google.code.gson:gson:2.10.1" //https://mvnrepository.com/artifact/com.google.code.gson/gson
+    implementation "org.springframework:spring-core:6.0.10" //https://mvnrepository.com/artifact/org.springframework/spring-core
+    implementation "org.apache.commons:commons-lang3:3.12.0" //https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     //implementation "com.formdev:flatlaf:3.1.1"
     //implementation "com.google.guava:guava:31.1-jre"
 }
